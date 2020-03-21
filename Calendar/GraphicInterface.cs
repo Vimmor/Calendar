@@ -9,7 +9,7 @@ namespace Calendar
         public void menu() {
             int choice;
             do {
-                Console.WriteLine("1.Add event\n2.Remove event\n3.Display events\n4.Clear console\n0.Exit");
+                Console.WriteLine("1.Add event\n2.Remove event\n3.Display events\n4.Clear console\n5.Write to a file\n6.Read from the file\n0.Exit");
                 choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice) {
                     case 1:
@@ -27,6 +27,12 @@ namespace Calendar
 
                     case 4:
                         Console.Clear();
+                        break;
+                    case 5:
+                        calendar.writeToAFile();
+                        break;
+                    case 6:
+                        calendar.readFromTheFile();
                         break;
                     case 0: break;
                     default:

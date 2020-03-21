@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Calendar
 {
+    [Serializable]
     class Event {
 
         public int ID { get; private set; }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace Calendar
@@ -52,6 +53,22 @@ namespace Calendar
             for(int i = 0; i < eventList.Count; i++) {
                 if (eventList[i].ID == id)
                     eventList.RemoveAt(i);
+            }
+        }
+
+        public void writeToAFile() {
+            string dir = Path.Combine(Directory.GetCurrentDirectory(), "calendar.bin");
+            using (Stream stream = File.Open(dir, FileMode.OpenOrCreate)) {
+                var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                bformatter.Serialize(stream, eventList);
+            }
+        }
+        
+        public void readFromTheFile() {
+            string dir = Path.Combine(Directory.GetCurrentDirectory(), "calendar.bin");
+            using (Stream stream = File.Open(dir, FileMode.Open)) {
+                var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                eventList = (List<Event>)bformatter.Deserialize(stream);
             }
         }
     }
