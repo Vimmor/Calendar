@@ -20,22 +20,21 @@ namespace Calendar
         }
 
         public int getAvailableId() {
-            bool flag = false;
+            var flag = false;
             int newId;
             Random rnd = new Random();
 
             do {
                 if(eventList.Count != 0) {
                     newId = rnd.Next(1, 512);
-                    Console.WriteLine(newId);
                     foreach (var item in eventList) {
-                        if (item.ID == newId) {
+                        if (item.ID != newId) {
                             flag = true;
                         }
                     }
                 }
                 else {
-                    newId = 1;
+                    newId = rnd.Next(1, 512);
                     flag = true;
                 }
             } while (flag == false);
@@ -46,18 +45,28 @@ namespace Calendar
             Console.WriteLine("Provide event's data in format: day, title, location, date");
             string[] elements = Console.ReadLine().Split(", ");
             Event newEvent = new Event(getAvailableId(),elements[0], elements[1], elements[2], elements[3]);
+            readFromTheFile();
             eventList.Add(newEvent);
+            this.sortEvents();
+            writeToAFile();
         }
 
         public void removeEvent(int id) {
+            readFromTheFile();
             for(int i = 0; i < eventList.Count; i++) {
                 if (eventList[i].ID == id)
                     eventList.RemoveAt(i);
             }
+            writeToAFile();
         }
 
+        public void removeDataBase() {
+            var dir = Path.Combine(Directory.GetCurrentDirectory(), "calendar.bin");
+            File.Delete(dir);
+            eventList.Clear();
+        }
         public void writeToAFile() {
-            string dir = Path.Combine(Directory.GetCurrentDirectory(), "calendar.bin");
+            var dir = Path.Combine(Directory.GetCurrentDirectory(), "calendar.bin");
             using (Stream stream = File.Open(dir, FileMode.OpenOrCreate)) {
                 var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
                 bformatter.Serialize(stream, eventList);
@@ -65,11 +74,31 @@ namespace Calendar
         }
         
         public void readFromTheFile() {
-            string dir = Path.Combine(Directory.GetCurrentDirectory(), "calendar.bin");
-            using (Stream stream = File.Open(dir, FileMode.Open)) {
-                var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-                eventList = (List<Event>)bformatter.Deserialize(stream);
+            var dir = Path.Combine(Directory.GetCurrentDirectory(), "calendar.bin");
+            if (File.Exists(dir)) {
+                using (Stream stream = File.Open(dir, FileMode.Open)) {
+                    var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                    eventList = (List<Event>)bformatter.Deserialize(stream);
+                }
             }
+        }
+
+        public void sortEvents() {
+            List<DateTime> dateTimeList = new List<DateTime>();
+             foreach(var dates in eventList) {
+                dateTimeList.Add(dates.eventDuration);
+            }
+            dateTimeList.Sort();
+
+            List<Event> newListOfEvents = new List<Event>();
+            for(int i = 0; i < dateTimeList.Count; i++) { 
+                foreach(var Event in eventList) { 
+                    if(Event.eventDuration == dateTimeList[i]) {
+                        newListOfEvents.Add(Event);
+                    }
+                }
+            }
+            eventList = newListOfEvents;
         }
     }
 }
