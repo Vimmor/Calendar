@@ -14,7 +14,7 @@ namespace Calendar
                 choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice) {
                     case 1:
-                        calendar.addNewEvent();
+                        //calendar.addNewEvent();
                         break;
 
                     case 2:

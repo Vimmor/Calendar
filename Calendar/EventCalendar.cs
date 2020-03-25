@@ -5,10 +5,13 @@ using System.Text;
 
 namespace Calendar
 {
-    class EventCalendar
+    public class EventCalendar
     {
-        private List<Event> eventList = new List<Event>();
+        public List<Event> eventList { get;  set; }
 
+        public EventCalendar() {
+            eventList = new List<Event>();
+        }
         public string getAllEvents() {
             var report = new System.Text.StringBuilder();
             report.AppendLine("ID\tDay\tBeginning\t\tlocation\ttitle");
@@ -26,7 +29,7 @@ namespace Calendar
 
             do {
                 if(eventList.Count != 0) {
-                    newId = rnd.Next(1, 512);
+                    newId = rnd.Next();
                     foreach (var item in eventList) {
                         if (item.ID != newId) {
                             flag = true;
@@ -41,14 +44,12 @@ namespace Calendar
 
             return newId;
         }
-        public void addNewEvent() {
-            Console.WriteLine("Provide event's data in format: day, title, location, date");
-            string[] elements = Console.ReadLine().Split(", ");
-            Event newEvent = new Event(getAvailableId(),elements[0], elements[1], elements[2], elements[3]);
-            readFromTheFile();
-            eventList.Add(newEvent);
+        public void addNewEvent(Event newEvent) {
+            //Console.WriteLine("Provide event's data in format: day, title, location, date");
+            //string[] elements = Console.ReadLine().Split(", ");
+            //Event newEvent = new Event(getAvailableId(),elements[0], elements[1], elements[2], elements[3]);
+            this.eventList.Add(newEvent);
             this.sortEvents();
-            writeToAFile();
         }
 
         public void removeEvent(int id) {
@@ -60,6 +61,23 @@ namespace Calendar
             writeToAFile();
         }
 
+        public bool eventListEmpty() { 
+            if(this.eventList.Count == 0) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        public bool whetherEventInTheCalendar(Event newEvent){ 
+            foreach (var item in eventList) {
+                if (item == newEvent) {
+                    return true;
+                }
+            }
+            return false;
+        }
         public void removeDataBase() {
             var dir = Path.Combine(Directory.GetCurrentDirectory(), "calendar.bin");
             File.Delete(dir);

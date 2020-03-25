@@ -7,6 +7,7 @@ namespace Calendar
         static void Main(string[] args) {
             GraphicInterface graphic = new GraphicInterface();
             graphic.menu();
+            
         }
     }
 }
