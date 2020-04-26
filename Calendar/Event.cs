@@ -23,7 +23,7 @@ namespace Calendar
         }
 
         public void setEventDuration(string date) {
-            eventDuration = DateTime.Parse(date.ToString());
+            eventDuration = DateTime.Parse(date.ToString());    
         }
     }
 }

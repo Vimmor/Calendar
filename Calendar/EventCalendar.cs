@@ -21,7 +21,6 @@ namespace Calendar
             }
             return report.ToString();
         }
-
         public int getAvailableId() {
             var flag = false;
             int newId;
@@ -51,7 +50,6 @@ namespace Calendar
             this.eventList.Add(newEvent);
             this.sortEvents();
         }
-
         public void removeEvent(int id) {
             readFromTheFile();
             for(int i = 0; i < eventList.Count; i++) {
@@ -60,7 +58,6 @@ namespace Calendar
             }
             writeToAFile();
         }
-
         public bool eventListEmpty() { 
             if(this.eventList.Count == 0) {
                 return true;
@@ -69,8 +66,7 @@ namespace Calendar
                 return false;
             }
         }
-
-        public bool whetherEventInTheCalendar(Event newEvent){ 
+        public bool whetherEventInTheCalendar(Event newEvent) {
             foreach (var item in eventList) {
                 if (item == newEvent) {
                     return true;
@@ -90,7 +86,6 @@ namespace Calendar
                 bformatter.Serialize(stream, eventList);
             }
         }
-        
         public void readFromTheFile() {
             var dir = Path.Combine(Directory.GetCurrentDirectory(), "calendar.bin");
             if (File.Exists(dir)) {
@@ -100,7 +95,6 @@ namespace Calendar
                 }
             }
         }
-
         public void sortEvents() {
             List<DateTime> dateTimeList = new List<DateTime>();
              foreach(var dates in eventList) {
