@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Windows\calendarBackground.png" />
+    <None Remove="Windows\clock.png" />
+    <None Remove="Windows\eventsImage.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="weatherImage4.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Windows\calendarBackground.png" />
+    <Resource Include="Windows\clock.png" />
+    <Resource Include="Windows\eventsImage.png" />
+  </ItemGroup>
+
+</Project>

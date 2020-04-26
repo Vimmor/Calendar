@@ -7,7 +7,6 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using unirest_net.http;
 using WeatherApi.Models;
-
 namespace WeatherApi.Controllers
 {
     [ApiController]

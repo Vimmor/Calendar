@@ -5,16 +5,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using WeatherApi.Models;
 
-namespace WeatherApi.Forecast.Data
+namespace WeatherApi.EventData
 {
-    public class EventContext : DbContext
+    public class EventContext
     {
-        public DbSet<Event> Event { get; set; }
-        public DbSet<DayBook> EventDay { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public class DataContext : DbContext
         {
-            optionsBuilder.UseSqlServer("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = CalendarAppData");
+            public DbSet<Event> Event { get; set; }
+            public DbSet<DayBook> EventDay { get; set; }
+
+            protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+            {
+                optionsBuilder.UseSqlServer("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = CalendarAppData");
+            }
         }
     }
 }
