@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace WeatherApi.EventsDataBase.ModelsConvertion
 {
+    /// <summary>
+    /// Class to convert data from Data Base to Class Model
+    /// </summary>
     public class ConvertIntoClass
     {
         /// <summary>
@@ -13,10 +16,10 @@ namespace WeatherApi.EventsDataBase.ModelsConvertion
         /// <param name="dataBaseDayBook">DayBook from DataBase</param>
         /// <returns>Converted DayBook to class Model</returns>
         public static WeatherApi.Models.DayBook convertDayBook(Models.DayBook dataBaseDayBook) {
-            WeatherApi.Models.DayBook dayBook = new WeatherApi.Models.DayBook() { date = dataBaseDayBook.date };
+            WeatherApi.Models.DayBook dayBook = new WeatherApi.Models.DayBook() { date = dataBaseDayBook.Date };
             List<WeatherApi.Models.Event> events = new List<WeatherApi.Models.Event>();
-            foreach (var element in dataBaseDayBook.eventList) {
-                events.Add(new WeatherApi.Models.Event(){ eventDate = element.eventDate, location = element.location, title = element.title);
+            foreach (var element in dataBaseDayBook.EventList) {
+                events.Add(new WeatherApi.Models.Event() {  location = element.Location, title = element.Title});
             }
             dayBook.eventList = events;
             return dayBook;
@@ -28,7 +31,7 @@ namespace WeatherApi.EventsDataBase.ModelsConvertion
         /// <param name="dataBaseEvent">Event from DataBase</param>
         /// <returns>Converted Event to class Model</returns>
         public static WeatherApi.Models.Event convertEvent(Models.Event dataBaseEvent) {
-            return new WeatherApi.Models.Event() { title = dataBaseEvent.title, location = dataBaseEvent.location, eventDate = dataBaseEvent.eventDate };
+            return new WeatherApi.Models.Event() { title = dataBaseEvent.Title, location = dataBaseEvent.Location };
         }
     }
 }

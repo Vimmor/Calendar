@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace WeatherApi.Models
 {
+    /// <summary>
+    /// DayBook class Model
+    /// </summary>
     public class DayBook
     {
         public List<Event> eventList { get; set; }

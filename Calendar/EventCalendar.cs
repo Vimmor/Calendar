@@ -8,7 +8,6 @@ namespace Calendar
     public class EventCalendar
     {
         public List<Event> eventList { get;  set; }
-
         public EventCalendar() {
             eventList = new List<Event>();
         }

@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace WeatherApi.Models
 {
+    /// <summary>
+    /// Forecast class Model ready to get information from Weather Api
+    /// </summary>
     class Forecast
     {
         public String cod { get; set; } = "";

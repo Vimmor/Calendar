@@ -5,13 +5,14 @@ using System.Threading.Tasks;
 
 namespace WeatherApi.EventsDataBase.Models
 {
+    /// <summary>
+    /// Model defining database table Event
+    /// </summary>
     public class Event
     {
-        public int id { get; set; }
-        public int dayBookId { get; set; }
-        public string title { get; set; }
-        public string location { get; set; }
-        public DateTime eventDate { get; set; }
-        
+        public int Id { get; set; }
+        public int DayBookId { get; set; }
+        public string Title { get; set; }
+        public string Location { get; set; }        
     }
 }
