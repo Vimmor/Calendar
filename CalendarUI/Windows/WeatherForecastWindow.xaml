@@ -10,34 +10,46 @@
         <Grid.Background>
             <ImageBrush ImageSource="calendarBackground.png"/>
         </Grid.Background>
-        <TextBox Text="" TextWrapping="Wrap" Margin="13,351,13,13" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" />
-        <StackPanel Margin="614,0,-29,298">
+        <TextBox Text="" TextWrapping="Wrap" Margin="13,313,13,13" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" />
+        <StackPanel Margin="597,0,-29,288">
             <StackPanel.Background>
-                <ImageBrush ImageSource="/Windows/weatherImage1.png"/>
+                <ImageBrush ImageSource="weatherImage1.png"/>
             </StackPanel.Background>
         </StackPanel>
-        <StackPanel Margin="-9,9,594,289">
+        <StackPanel Margin="-9,9,583,283">
             <StackPanel.Background>
-                <ImageBrush ImageSource="/Windows/weatherImage2.png"/>
+                <ImageBrush ImageSource="weatherImage2.png"/>
             </StackPanel.Background>
         </StackPanel>
-        <StackPanel Margin="614,169,-29,129">
+        <StackPanel Margin="598,169,-29,122">
             <StackPanel.Background>
-                <ImageBrush ImageSource="/Windows/weatherImage3.jpg"/>
+                <ImageBrush ImageSource="weatherImage3.jpg"/>
             </StackPanel.Background>
         </StackPanel>
         <StackPanel Margin="9,174,576,123">
             <StackPanel.Background>
-                <ImageBrush ImageSource="/Windows/weatherImage4.png"/>
+                <ImageBrush ImageSource="weatherImage4.png"/>
             </StackPanel.Background>
         </StackPanel>
-        <Label x:Name="weatherLabel" Content="Enter the name of the City or Zip Code" HorizontalAlignment="Left" Margin="191,36,0,0" VerticalAlignment="Top" Height="83" Width="462" HorizontalContentAlignment="Center" FontSize="24" />
-        <TextBox Text="" TextWrapping="Wrap" Margin="296,108,253,273" HorizontalContentAlignment="Center"/>
-        <CheckBox x:Name="ConfirmWeatherCheckBox" Content="Confirm" Margin="298,229,386,186"/>
-        <Button x:Name="acceptWeatherButton" Content="Accept" Margin="404,210,257,174">
+        <Label x:Name="weatherLabel" Content="Choose the format and enter the City" HorizontalAlignment="Left" Margin="191,36,0,0" VerticalAlignment="Top" Height="83" Width="462" HorizontalContentAlignment="Center" FontSize="24" />
+        <TextBox Text="" TextWrapping="Wrap"  Margin="297,150,252,233" HorizontalContentAlignment="Center"/>
+        <CheckBox x:Name="ConfirmWeatherCheckBox" Content="Confirm" Margin="321,228,363,152" RenderTransformOrigin="0.476,1.252" FontSize="14"/>
+        <Button x:Name="acceptWeatherButton" Content="Accept" Margin="407,217,254,155" FontSize="24" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="1.317"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0.587"/>
+                </TransformGroup>
+            </Button.RenderTransform>
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
+        <ComboBox Margin="368,97,333,293">
+            <ComboBoxItem Content="City Name"></ComboBoxItem>
+            <ComboBoxItem Content="Zip Code"></ComboBoxItem>
+        </ComboBox>
     </Grid>
 </Window>

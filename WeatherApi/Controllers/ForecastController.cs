@@ -10,7 +10,7 @@ using WeatherApi.Models;
 namespace WeatherApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("Weather")]
     public class ForecastController : ControllerBase
     {
         static string defaultCityName = "Wrocław";

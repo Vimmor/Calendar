@@ -27,8 +27,8 @@
         </Button>
         <TextBox x:Name="titleTextBox" Text="Title" TextWrapping="Wrap" Margin="95,124,427,251" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
         <TextBox x:Name="locationTextBox" Text="Location" TextWrapping="Wrap" Margin="96,196,426,179" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="timeTextBox" Text="Time in format:             MM/dd/yyyy HH:mm " TextWrapping="Wrap" Margin="98,272,424,77" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
-        <CheckBox x:Name="confirmCheckBox" Content="Confirm" Margin="50,376,274,9" Grid.Column="1" FontSize="18"/>
+        <TextBox x:Name="timeTextBox" Text="Time in format:             MM/dd/yyyy HH:mm " TextWrapping="Wrap" Margin="98,272,424,63" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
+        <CheckBox x:Name="confirmCheckBox" Content="Confirm" Margin="50,365,274,20" Grid.Column="1" FontSize="18"/>
 
     </Grid>
 </Window>

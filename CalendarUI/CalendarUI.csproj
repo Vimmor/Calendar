@@ -10,6 +10,10 @@
     <None Remove="Windows\calendarBackground.png" />
     <None Remove="Windows\clock.png" />
     <None Remove="Windows\eventsImage.png" />
+    <None Remove="Windows\weatherImage1.png" />
+    <None Remove="Windows\weatherImage2.png" />
+    <None Remove="Windows\weatherImage3.jpg" />
+    <None Remove="Windows\weatherImage4.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +24,10 @@
     <Resource Include="Windows\calendarBackground.png" />
     <Resource Include="Windows\clock.png" />
     <Resource Include="Windows\eventsImage.png" />
+    <Resource Include="Windows\weatherImage1.png" />
+    <Resource Include="Windows\weatherImage2.png" />
+    <Resource Include="Windows\weatherImage3.jpg" />
+    <Resource Include="Windows\weatherImage4.png" />
   </ItemGroup>
 
 </Project>

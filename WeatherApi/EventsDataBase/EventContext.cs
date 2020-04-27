@@ -11,8 +11,8 @@ namespace WeatherApi.EventData
     {
         public class DataContext : DbContext
         {
-            public DbSet<Event> Event { get; set; }
-            public DbSet<DayBook> EventDay { get; set; }
+            public DbSet<EventsDataBase.Models.DayBook> EventDay { get; set; }
+            public DbSet<EventsDataBase.Models.Event> Event { get; set; }
 
             protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             {
