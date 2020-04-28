@@ -12,12 +12,20 @@
         </Grid.Background>
         <StackPanel Margin="518,28,38,185">
             <StackPanel.Background>
-                <ImageBrush ImageSource="/Windows/dayBookImage.png"/>
+                <ImageBrush ImageSource="dayBookImage.png"/>
             </StackPanel.Background>
         </StackPanel>
-        <Label x:Name="dayBookLabel" Content="Enter a date that you want to check events" Margin="31,79,299,253" HorizontalContentAlignment="Center" FontSize="24" IsEnabled="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" FontStyle="Normal"/>
-        <TextBox x:Name="dayBookContextTextBox" Text="" TextWrapping="Wrap" Margin="131,154,381,227" HorizontalContentAlignment="Center"/>
-        <TextBox Text="" TextWrapping="Wrap" Margin="12,305,14,47" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" />
-
+        <Label x:Name="dayBookLabel" Content="DayBook - Lets check events" Margin="6,23,276,342" HorizontalContentAlignment="Center" FontSize="24" IsEnabled="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" FontStyle="Normal"/>
+        <TextBox x:Name="dayBookContextTextBox" Text="" TextWrapping="Wrap" Margin="121,132,391,249" HorizontalContentAlignment="Center" FontSize="20"/>
+        <TextBox x:Name="resultTextBox" Text="" TextWrapping="Wrap" Margin="12,288,14,47" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" FontSize="16"/>
+        <Button x:Name="AcceptButton" Content="Accept" Margin="168,198,426,167" FontSize="24" Click="AcceptButton_Click">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <ComboBox x:Name="preferenceComboBox" Margin="215,93,486,291" HorizontalContentAlignment="Center">
+            <ComboBoxItem Content="All Events"></ComboBoxItem>
+            <ComboBoxItem Content="From Date"></ComboBoxItem>
+        </ComboBox>
     </Grid>
 </Window>

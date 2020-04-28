@@ -21,5 +21,25 @@ namespace CalendarUI.Windows
         {
             InitializeComponent();
         }
+
+        private void confirmButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (confirmCheckBox.IsChecked == true)
+            {
+                try
+                {
+                    var date = DateTime.Parse(timeTextBox.Text);
+                    var newEvent = new Models.Event() { location = locationTextBox.Text, title = titleTextBox.Text };
+                    Communication.CommunicateWithApi.addNewRecord(newEvent, timeTextBox.Text);
+                }
+                catch (FormatException exept)
+                {
+
+                    throw exept;
+                    MessageBoxResult message = MessageBox.Show(exept.ToString(), "Empty field");
+                }
+            }
+        }
     }
 }
+

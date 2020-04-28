@@ -32,17 +32,26 @@ namespace WeatherApi.Controllers
         if (dataBaseDayBook.Count == 0) {
             return JsonConvert.SerializeObject(new Models.DayBook());
         }
-            return JsonConvert.SerializeObject(EventsDataBase.ModelsConvertion.ConvertIntoClass.convertDayBook(dataBaseDayBook[0]));
+            List<Models.Event> rightData = new List<Models.Event>();
+            var DbEvents = context.Event.Where(e => e.DayBookId == dataBaseDayBook[0].Id).ToList();
+            foreach (var eventFromList in DbEvents) {
+                rightData.Add(EventsDataBase.ModelsConvertion.ConvertIntoClass.convertEvent(eventFromList));
+            }
+            return JsonConvert.SerializeObject(rightData);
         }
 
         /// <summary>
         /// Get endpoints to get all day books
         /// </summary>
         /// <returns>List of daybooks in Json Format</returns>
-        [HttpGet("/DayBooks")]
+        [HttpGet("DayBooks/all")]
         public String GetAllDayBooks() {
             context.Database.EnsureCreated();
-            var listOfDayBooks = context.DayBook.ToList();
+            var dayBooksFromDB= context.DayBook.ToList();
+            var listOfDayBooks = new List<Models.DayBook>();
+            foreach (var daybook in listOfDayBooks) {
+                listOfDayBooks.Add(new Models.DayBook { eventList = daybook.eventList, date = daybook.date });           
+            }
             return JsonConvert.SerializeObject(listOfDayBooks);
         }
 

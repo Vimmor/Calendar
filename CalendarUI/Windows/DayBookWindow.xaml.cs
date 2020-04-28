@@ -21,5 +21,36 @@ namespace CalendarUI.Windows
         {
             InitializeComponent();
         }
+
+        private void AcceptButton_Click(object sender, RoutedEventArgs e)
+        {
+            //if (preferenceComboBox.SelectedIndex > -1)
+            //{
+            //    if (preferenceComboBox.SelectedItem.ToString() == "From Date")
+            //    {
+            //        try
+            // {
+            //DateTime.Parse(dayBookContextTextBox.Text);
+            //var result = DataConverter.DayBookConverter.getDayBooks(Communication.CommunicateWithApi.getDataFromApi(dayBookContextTextBox.Text));
+            //resultTextBox.Text = result;
+            //        }
+            //        catch (FormatException badParsing)
+            //        {
+            //            throw badParsing;
+            //            MessageBoxResult message = MessageBox.Show(badParsing.ToString(), "Try another one");
+            //        }
+            //    }
+            //    else
+            //    {
+            var response = DataConverter.DayBookConverter.getAllEvents(Communication.CommunicateWithApi.getAllEvents());
+            resultTextBox.Text = response;
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBoxResult message = MessageBox.Show("Choice an option in combo box!", "Nothing has been chosen");
+            //}
+            //}
+        }
     }
 }

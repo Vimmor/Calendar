@@ -9,6 +9,7 @@
   <ItemGroup>
     <None Remove="Windows\calendarBackground.png" />
     <None Remove="Windows\clock.png" />
+    <None Remove="Windows\dayBookImage.png" />
     <None Remove="Windows\eventsImage.png" />
     <None Remove="Windows\weatherImage1.png" />
     <None Remove="Windows\weatherImage2.png" />
@@ -17,12 +18,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="weatherImage4.png" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Windows\calendarBackground.png" />
     <Resource Include="Windows\clock.png" />
+    <Resource Include="Windows\dayBookImage.png" />
     <Resource Include="Windows\eventsImage.png" />
     <Resource Include="Windows\weatherImage1.png" />
     <Resource Include="Windows\weatherImage2.png" />

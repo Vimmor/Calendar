@@ -20,7 +20,7 @@
             </StackPanel.Background>
         </StackPanel>
         <Label x:Name="setNewEventLabel" Content="Set information about new Event" Margin="17,60,351,277" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
-        <Button x:Name="confirmButton" Content="Accept" Margin="153,349,9,22" FontSize="18" Grid.Column="1">
+        <Button x:Name="confirmButton" Content="Accept" Margin="153,349,9,22" FontSize="18" Grid.Column="1" Click="confirmButton_Click">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
@@ -28,7 +28,7 @@
         <TextBox x:Name="titleTextBox" Text="Title" TextWrapping="Wrap" Margin="95,124,427,251" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
         <TextBox x:Name="locationTextBox" Text="Location" TextWrapping="Wrap" Margin="96,196,426,179" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
         <TextBox x:Name="timeTextBox" Text="Time in format:             MM/dd/yyyy HH:mm " TextWrapping="Wrap" Margin="98,272,424,63" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
-        <CheckBox x:Name="confirmCheckBox" Content="Confirm" Margin="50,365,274,20" Grid.Column="1" FontSize="18"/>
+        <CheckBox x:Name="confirmCheckBox" Content="Confirm" Margin="76,376,248,9" Grid.Column="1" FontSize="18"/>
 
     </Grid>
 </Window>
