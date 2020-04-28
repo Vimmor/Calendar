@@ -31,8 +31,6 @@ namespace CalendarUI.Windows
                 }
                 catch (FormatException exept)
                 {
-
-                    throw exept;
                     MessageBoxResult message = MessageBox.Show(exept.ToString(), "Empty field");
                 }
             }

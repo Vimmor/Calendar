@@ -44,15 +44,15 @@ namespace WeatherApi.Controllers
         /// Get endpoints to get all day books
         /// </summary>
         /// <returns>List of daybooks in Json Format</returns>
-        [HttpGet("DayBooks/all")]
+        [HttpGet("allDayBooks")]
         public String GetAllDayBooks() {
             context.Database.EnsureCreated();
-            var dayBooksFromDB= context.DayBook.ToList();
-            var listOfDayBooks = new List<Models.DayBook>();
-            foreach (var daybook in listOfDayBooks) {
-                listOfDayBooks.Add(new Models.DayBook { eventList = daybook.eventList, date = daybook.date });           
+            var eventsFromDb= context.Event.ToList();
+            var listOfAllEvents = new List<Models.Event>();
+            foreach (var newEvent in eventsFromDb) {
+                listOfAllEvents.Add(new Models.Event() { location = newEvent.Location, title = newEvent.Title });
             }
-            return JsonConvert.SerializeObject(listOfDayBooks);
+            return JsonConvert.SerializeObject(listOfAllEvents);
         }
 
         /// <summary>

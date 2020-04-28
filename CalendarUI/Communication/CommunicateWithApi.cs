@@ -39,17 +39,8 @@ namespace CalendarUI.Communication
         public static List<Models.Event> getAllEvents()
         {
             WebClient client = new WebClient();
-            var response = JsonConvert.DeserializeObject<List<Models.DayBook>>(client.DownloadString("http://localhost:1998/Events/DayBooks/all"));
-            var listOfDayBooks = new List<Models.DayBook>();
-            var eventList = new List<Models.Event>();
-            foreach (var daybook in response)
-            {
-                foreach (var item in daybook.eventList)
-                {
-                    eventList.Add(new Models.Event() { location = item.location, title = item.title });
-                }
-            }
-            return eventList;
+            var response = JsonConvert.DeserializeObject<List<Models.Event>>(client.DownloadString("http://localhost:1998/Events/allDayBooks"));
+            return response;
         }
 
         /// <summary>

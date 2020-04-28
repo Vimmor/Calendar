@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WeatherApi</name>
+    </assembly>
+    <members>
+        <member name="T:WeatherApi.Controllers.DataBaseController">
+            <summary>
+            Controller that enable connection
+            between application and database
+            </summary>
+        </member>
+        <member name="M:WeatherApi.Controllers.DataBaseController.GetDayBookForSpecifiedDay(System.String)">
+            <summary>
+            Get Endpoints that return DataBase Daybook specified by parametres 
+            in Json Format
+            </summary>
+            <param name="dayOfTheEvents">Date of events day that we want to get</param>
+            <returns>DayBook in Json Format</returns>
+        </member>
+        <member name="M:WeatherApi.Controllers.DataBaseController.GetAllDayBooks">
+            <summary>
+            Get endpoints to get all day books
+            </summary>
+            <returns>List of daybooks in Json Format</returns>
+        </member>
+        <member name="M:WeatherApi.Controllers.DataBaseController.AddToDataBase(WeatherApi.Models.Event,System.String)">
+            <summary>
+            Put endpoints to put Event into Data Base
+            specified by Event from class Model and 
+            correct eventDay
+            </summary>
+            <param name="newEvent">Specified new Event that we want to add to Data Base</param>
+            <param name="eventDay">String respresenting day of the events</param>
+        </member>
+        <member name="T:WeatherApi.Controllers.ForecastController">
+            <summary>
+            Controller to download data from Weather
+            Forecast Api and send it to application
+            in user-friendly form
+            </summary>
+        </member>
+        <member name="M:WeatherApi.Controllers.ForecastController.GetDefaultWeatherForecast">
+            <summary>
+            Get endpoints to get an information from Api 
+            for default location set in defaultCityName variable
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WeatherApi.Controllers.ForecastController.GetWeatherForecastByCityName(System.String)">
+            <summary>
+            Get endpoints to get an information from Api
+            for the specified City located in the end of 
+            url adress 
+            </summary>
+            <param name="name">It specifies the City name</param>
+            <returns>Information in suitable format</returns>
+        </member>
+        <member name="M:WeatherApi.Controllers.ForecastController.GetWeatherByZipCode(System.String,System.String)">
+            <summary>
+            Get endpoints to get an information from Api
+            for the City specified by Zip and Country Code
+            </summary>
+            <param name="zip_code">Zip Code specified in Api Documentation</param>
+            <param name="country_code">Same as upper</param>
+            <returns>Information in suitable format</returns>
+        </member>
+        <member name="T:WeatherApi.EventData.EventContext">
+            <summary>
+            Class to set DbSets and build up Local DataBase 
+            that is extension to Microsoft SQL Server
+            </summary>
+        </member>
+        <member name="M:WeatherApi.EventData.EventContext.DataContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            Creating an database specified by DataSource in catalog from Initial Catalog
+            </summary>
+            <param name="optionsBuilder">variable specifies config for building DB</param>
+        </member>
+        <member name="T:WeatherApi.EventsDataBase.ModelsConvertion.ConvertIntoClass">
+            <summary>
+            Class to convert data from Data Base to Class Model
+            </summary>
+        </member>
+        <member name="M:WeatherApi.EventsDataBase.ModelsConvertion.ConvertIntoClass.convertDayBook(WeatherApi.EventsDataBase.Models.DayBook)">
+            <summary>
+            Method to convert DayBook from DataBase to class Model
+            </summary>
+            <param name="dataBaseDayBook">DayBook from DataBase</param>
+            <returns>Converted DayBook to class Model</returns>
+        </member>
+        <member name="M:WeatherApi.EventsDataBase.ModelsConvertion.ConvertIntoClass.convertEvent(WeatherApi.EventsDataBase.Models.Event)">
+            <summary>
+            Method to convert Event from DataBase to class Model
+            </summary>
+            <param name="dataBaseEvent">Event from DataBase</param>
+            <returns>Converted Event to class Model</returns>
+        </member>
+        <member name="T:WeatherApi.EventsDataBase.ModelsConvertion.ConvertIntoDataBase">
+            <summary>
+            Class to convert data between Application
+            and Database
+            </summary>
+        </member>
+        <member name="M:WeatherApi.EventsDataBase.ModelsConvertion.ConvertIntoDataBase.convertDayBook(WeatherApi.Models.DayBook)">
+            <summary>
+            Method to convert DayBook from class Model to Database Model
+            </summary>
+            <param name="dayBook">DayBook model from class Model</param>
+            <returns>Converted DayBook to DataBase Model</returns>
+        </member>
+        <member name="M:WeatherApi.EventsDataBase.ModelsConvertion.ConvertIntoDataBase.convertEvent(WeatherApi.Models.Event)">
+            <summary>
+            Method to convert Event from class Model to DataBase Model      
+            </summary>
+            <param name="eventFromClass">Event model from class Model</param>
+            <returns>Converted Event to DataBase Model</returns>
+        </member>
+        <member name="M:WeatherApi.EventsDataBase.ModelsConvertion.ConvertIntoUserForecast.convertFromJsonToString(WeatherApi.Models.Forecast)">
+            <summary>
+            Method to convert current waether forecast data 
+            to the string that will be displayed in window
+            </summary>
+            <param name="forecast">Forecast model with download data from Api</param>
+            <returns>StringBuild object convert to big String</returns>
+        </member>
+        <member name="T:WeatherApi.EventsDataBase.Models.DayBook">
+            <summary>
+            Model defining dataBase table DayBook
+            List<Event>Variable providing one-to-many relation</Event>
+            </summary>
+        </member>
+        <member name="T:WeatherApi.EventsDataBase.Models.Event">
+            <summary>
+            Model defining database table Event
+            </summary>
+        </member>
+        <member name="T:WeatherApi.Models.DayBook">
+            <summary>
+            DayBook class Model
+            </summary>
+        </member>
+        <member name="T:WeatherApi.Models.Event">
+            <summary>
+            Event class Model
+            </summary>
+        </member>
+        <member name="T:WeatherApi.Models.Forecast">
+            <summary>
+            Forecast class Model ready to get information from Weather Api
+            </summary>
+        </member>
+        <member name="T:WeatherApi.Program">
+            <summary>
+            Main class of the program to start hosting server 
+            </summary>
+        </member>
+        <member name="M:WeatherApi.Program.Main(System.String[])">
+            <summary>
+            Main method of the program
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:WeatherApi.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Method to build up a host server and make backend life
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WeatherApi.Startup">
+            <summary>
+            Class to build and configurate backend service
+            </summary>
+        </member>
+        <member name="M:WeatherApi.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor class StartUp
+            </summary>
+            <param name="configuration">Configuration variable</param>
+        </member>
+        <member name="P:WeatherApi.Startup.Configuration">
+            <summary>
+            Variable to hold an configuration
+            </summary>
+        </member>
+    </members>
+</doc>
