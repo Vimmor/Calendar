@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalendarUI", "CalendarUI.cs
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherApi", "..\WeatherApi\WeatherApi.csproj", "{F8C35670-39AD-4ABB-A8F9-E3D96BD06A98}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalendarTests", "..\CalendarTests\CalendarTests.csproj", "{F7D4CA84-4A4D-4EC6-A88C-F9C04CFC7025}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F8C35670-39AD-4ABB-A8F9-E3D96BD06A98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8C35670-39AD-4ABB-A8F9-E3D96BD06A98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8C35670-39AD-4ABB-A8F9-E3D96BD06A98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7D4CA84-4A4D-4EC6-A88C-F9C04CFC7025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7D4CA84-4A4D-4EC6-A88C-F9C04CFC7025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7D4CA84-4A4D-4EC6-A88C-F9C04CFC7025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7D4CA84-4A4D-4EC6-A88C-F9C04CFC7025}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

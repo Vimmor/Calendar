@@ -16,8 +16,7 @@ namespace WeatherApi.EventsDataBase.ModelsConvertion
         public static String convertFromJsonToString(WeatherApi.Models.Forecast forecast) {
             var stringBuilder = new System.Text.StringBuilder();
             stringBuilder.AppendLine("------------ Weather Forecast --------------");
-            stringBuilder.AppendLine($"------------ {DateTime.Now.ToString()} --------------");
-            stringBuilder.AppendLine($"------------ {forecast.city.name} --------------");
+            stringBuilder.AppendLine($"-------- {DateTime.Now.ToString()}  {forecast.city.name} ----------");
             stringBuilder.AppendLine($"------------ City Location --------------");
             stringBuilder.AppendLine($"Longitude: {String.Format("{0:N2}", forecast.city.coord.lon)} |  Latitude: {String.Format("{0:N2}", forecast.city.coord.lon)}");
             stringBuilder.AppendLine("------------ Main Information --------------");
@@ -28,8 +27,12 @@ namespace WeatherApi.EventsDataBase.ModelsConvertion
             }
             stringBuilder.AppendLine($"Humidity: {forecast.list[0].main.Humidity}%");
             stringBuilder.AppendLine($"Atmospheric pressure: {forecast.list[0].main.Pressure}C");
-            stringBuilder.AppendLine($"Atmospheric pressure on the sea level: {forecast.list[0].main.SeaLevel} hPa");
-            stringBuilder.AppendLine($"Atmospheric pressure on the ground level: {forecast.list[0].main.GrndLevel} hPa");
+            if (forecast.list[0].main.SeaLevel != 0) {
+                stringBuilder.AppendLine($"Atmospheric pressure on the sea level: {forecast.list[0].main.SeaLevel} hPa");
+            }
+            if (forecast.list[0].main.GrndLevel != 0) {
+                stringBuilder.AppendLine($"Atmospheric pressure on the ground level: {forecast.list[0].main.GrndLevel} hPa");
+            }
             stringBuilder.AppendLine("------- Wind -------");
             stringBuilder.AppendLine($"Wind Speed: {forecast.list[0].wind.speed} meter/sec");
             stringBuilder.AppendLine($"Wind Direction: {forecast.list[0].wind.deg} Degrees");

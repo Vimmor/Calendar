@@ -10,7 +10,7 @@ namespace WeatherApi.Models
     /// </summary>
     public class DayBook
     {
-        public List<Event> eventList { get; set; }
+        public List<Event> eventList { get; set; } = new List<Event>();
         public DateTime date { get; set; }
     }
 }

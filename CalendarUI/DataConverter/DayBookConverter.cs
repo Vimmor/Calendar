@@ -32,17 +32,7 @@ namespace CalendarUI.DataConverter
         /// </summary>
         /// <param name="listOfDayBooks">List of all events</param>
         /// <returns>String ready to display</returns>
-        public static String getAllEvents(List<Models.Event> listOfAllEvents) {
-            //var allEventsTable = new System.Text.StringBuilder();
-            //allEventsTable.Append("Date\tTitle\tLocation\t");
-            //foreach (var daybook in listOfDayBooks) {
-            //    allEventsTable.AppendLine($"--------- {daybook.date.Day}.{daybook.date.Month}.{daybook.date.Year} -----------");
-            //    allEventsTable.AppendLine("Title\tLocation");
-            //    foreach (var oneEvent in daybook.eventList) {
-            //        allEventsTable.AppendLine($"{oneEvent.title}\t{oneEvent.location}");
-            //    }
-            //}
-            //return allEventsTable.ToString();
+        public static String getAllEvents(List<Models.Event> listOfAllEvents) { 
             var allEventsTable = new System.Text.StringBuilder();
             foreach (var dayBookEvent in listOfAllEvents)
             {
