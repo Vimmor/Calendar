@@ -29,6 +29,11 @@
         <TextBox x:Name="locationTextBox" Text="Location" TextWrapping="Wrap" Margin="96,196,426,179" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
         <TextBox x:Name="timeTextBox" Text="Time in format:             MM/dd/yyyy HH:mm " TextWrapping="Wrap" Margin="98,272,424,63" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
         <CheckBox x:Name="confirmCheckBox" Content="Confirm" Margin="76,376,248,9" Grid.Column="1" FontSize="18"/>
+        <Button x:Name="returnButton" Content="" Margin="0,-3,223,377" IsDefault="True" VerticalContentAlignment="Bottom" Click="returnButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Back Button_256.png"/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

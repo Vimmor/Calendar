@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Windows\Back Button_256.png" />
     <None Remove="Windows\calendarBackground.png" />
     <None Remove="Windows\clock.png" />
     <None Remove="Windows\dayBookImage.png" />
@@ -22,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Windows\Back Button_256.png" />
     <Resource Include="Windows\calendarBackground.png" />
     <Resource Include="Windows\clock.png" />
     <Resource Include="Windows\dayBookImage.png" />

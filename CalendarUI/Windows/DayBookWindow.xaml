@@ -24,8 +24,13 @@
             </Button.Background>
         </Button>
         <ComboBox x:Name="preferenceComboBox" Margin="215,93,486,291" HorizontalContentAlignment="Center">
-            <ComboBoxItem Content="All Events"></ComboBoxItem>
-            <ComboBoxItem Content="From Date"></ComboBoxItem>
+            <ComboBoxItem Content="All Events" Name="allEvents"></ComboBoxItem>
+            <ComboBoxItem Content="From Date" Name="fromDate"></ComboBoxItem>
         </ComboBox>
+        <Button x:Name="returnButton" Content="" Margin="0,-3,744,386" IsDefault="True" VerticalContentAlignment="Bottom" Click="returnButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Back Button_256.png"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>

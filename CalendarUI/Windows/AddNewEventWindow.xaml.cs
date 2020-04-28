@@ -12,9 +12,6 @@ using System.Windows.Shapes;
 
 namespace CalendarUI.Windows
 {
-    /// <summary>
-    /// Logika interakcji dla klasy AddNewEventWindow.xaml
-    /// </summary>
     public partial class AddNewEventWindow : Window
     {
         public AddNewEventWindow()
@@ -39,6 +36,13 @@ namespace CalendarUI.Windows
                     MessageBoxResult message = MessageBox.Show(exept.ToString(), "Empty field");
                 }
             }
+        }
+
+        private void returnButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
     }
 }

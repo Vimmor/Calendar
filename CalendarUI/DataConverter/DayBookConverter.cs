@@ -12,8 +12,13 @@ namespace CalendarUI.DataConverter
     /// </summary>
     class DayBookConverter
     {
+        /// <summary>
+        /// Method to create String in right format for the client
+        /// </summary>
+        /// <param name="listOfDayBooks">DayBook object</param>
+        /// <returns>String ready to display</returns>
         public static String getDayBooks(Models.DayBook listOfDayBooks) {
-            var allEventsTable = new System.Text.StringBuilder();
+            var allEventsTable = new StringBuilder();
             allEventsTable.AppendLine($"--------- {listOfDayBooks.date.Day}.{listOfDayBooks.date.Month}.{listOfDayBooks.date.Year} -----------");
             allEventsTable.AppendLine("Title\tLocation");
             foreach (var dayBook in listOfDayBooks.eventList) {
@@ -22,6 +27,11 @@ namespace CalendarUI.DataConverter
             return allEventsTable.ToString();
         }
 
+        /// <summary>
+        /// Method to create String in right format with all Events from DataBase
+        /// </summary>
+        /// <param name="listOfDayBooks">List of all events</param>
+        /// <returns>String ready to display</returns>
         public static String getAllEvents(List<Models.Event> listOfDayBooks) {
             //var allEventsTable = new System.Text.StringBuilder();
             //allEventsTable.Append("Date\tTitle\tLocation\t");

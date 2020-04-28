@@ -9,13 +9,25 @@ using Microsoft.Extensions.Logging;
 
 namespace WeatherApi
 {
+    /// <summary>
+    /// Main class of the program to start hosting server 
+    /// </summary>
     public class Program
     {
+        /// <summary>
+        /// Main method of the program
+        /// </summary>
+        /// <param name="args"></param>
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
         }
 
+        /// <summary>
+        /// Method to build up a host server and make backend life
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>

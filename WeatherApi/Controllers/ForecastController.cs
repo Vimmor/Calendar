@@ -30,7 +30,7 @@ namespace WeatherApi.Controllers
         [HttpGet("")]
         public String GetDefaultWeatherForecast() {
             var response = JsonConvert.DeserializeObject<Forecast>(Unirest.get(basicUrl + "?q=" + defaultCityName + "&APPID=" + accessCode).asJson<string>().Body.ToString());
-            return (response.message + " " + response.cnt + " " + response.cod + " " + response.city.country);
+            return EventsDataBase.ModelsConvertion.ConvertIntoUserForecast.convertFromJsonToString(response);
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace WeatherApi.Controllers
         [HttpGet("{name}")]
         public String GetWeatherForecastByCityName(string name) {
             var response = JsonConvert.DeserializeObject<Forecast>(Unirest.get(basicUrl + "?q=" + name + "&APPID=" + accessCode).asJson<string>().Body.ToString());
-            return (response.message + " " + response.cnt + " " + response.cod + " " + response.city.country);
+            return EventsDataBase.ModelsConvertion.ConvertIntoUserForecast.convertFromJsonToString(response);
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace WeatherApi.Controllers
         [HttpGet("{zip_code}/{country_code}")]
         public String GetWeatherByZipCode(string zip_code, string country_code) {
             var response = JsonConvert.DeserializeObject<Forecast>(Unirest.get(basicUrl + "?zip" + zip_code + "," + country_code + "&APPID=" + accessCode).asJson<string>().Body.ToString());
-            return (response.message + " " + response.cnt + " " + response.cod + " " + response.city.country);
+            return EventsDataBase.ModelsConvertion.ConvertIntoUserForecast.convertFromJsonToString(response);
         }
     }
 }

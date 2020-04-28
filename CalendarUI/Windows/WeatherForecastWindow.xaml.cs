@@ -21,5 +21,28 @@ namespace CalendarUI.Windows
         {
             InitializeComponent();
         }
+
+        private void returnButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+
+        private void acceptWeatherButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (choiceComboBox.SelectedItem == city) {
+                if (dataTextBox.Text.Contains("/")) {
+                  MessageBoxResult message = MessageBox.Show("You choose City, then give a city name!", "Nothing has been chosen"); 
+                }
+                else {
+                    resultTextBox.Text = Communication.CommunicateWithApi.getWeatherForecast(dataTextBox.Text);
+                }
+            }
+            else {
+                resultTextBox.Text = Communication.CommunicateWithApi.getWeatherForecast(dataTextBox.Text);
+            }
+            
+        }
     }
 }

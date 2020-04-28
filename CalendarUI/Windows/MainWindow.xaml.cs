@@ -34,19 +34,21 @@ namespace CalendarUI.Windows
         {
             AddNewEventWindow eventWindow = new AddNewEventWindow();
             eventWindow.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void displayWeatherForecastButton_Click(object sender, RoutedEventArgs e)
         {
             var weatherwindow = new WeatherForecastWindow();
             weatherwindow.Show();
+            this.Close();
         }
 
         private void showDayBookButton_Click(object sender, RoutedEventArgs e)
         {
             var dayBookWindow = new DayBookWindow();
             dayBookWindow.Show();
+            this.Close();
         }
     }
 }
