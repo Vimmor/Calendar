@@ -19,21 +19,31 @@
                 <ImageBrush ImageSource="eventsImage.png"/>
             </StackPanel.Background>
         </StackPanel>
-        <Label x:Name="setNewEventLabel" Content="Set information about new Event" Margin="17,60,351,277" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
-        <Button x:Name="confirmButton" Content="Accept" Margin="153,349,9,22" FontSize="18" Grid.Column="1" Click="confirmButton_Click">
+        <Label x:Name="setNewEventLabel" Content="Set information about new Event" Margin="17,38,351,299" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
+        <Button x:Name="confirmButton" Content="Accept" Margin="153,349,9,22" FontSize="28" Grid.Column="1" Click="confirmButton_Click">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <TextBox x:Name="titleTextBox" Text="Title" TextWrapping="Wrap" Margin="95,124,427,251" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="locationTextBox" Text="Location" TextWrapping="Wrap" Margin="96,196,426,179" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="timeTextBox" Text="Time in format:             MM/dd/yyyy" TextWrapping="Wrap" Margin="98,272,424,63" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
-        <CheckBox x:Name="confirmCheckBox" Content="Confirm" Margin="76,376,248,9" Grid.Column="1" FontSize="18"/>
+        <TextBox x:Name="titleTextBox" Text="Title" TextWrapping="Wrap" Margin="95,90,427,285" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" RenderTransformOrigin="1.141,1.959"/>
+        <TextBox x:Name="locationTextBox" Text="Location" TextWrapping="Wrap" Margin="96,148,426,222" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="timeTextBox" Text="Time in format:             MM/dd/yyyy          HH:MM" TextWrapping="Wrap" Margin="98,260,424,52" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.496"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-1.294"/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <CheckBox x:Name="confirmCheckBox" Content="Confirm" Margin="76,376,248,9" Grid.Column="1" FontSize="20"/>
         <Button x:Name="returnButton" Content="" Margin="0,-3,223,377" IsDefault="True" VerticalContentAlignment="Bottom" Click="returnButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Back Button_256.png"/>
             </Button.Background>
         </Button>
+        <TextBox x:Name="descriptionTextBox" Text="Description" TextWrapping="Wrap" Margin="97,204,425,159" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

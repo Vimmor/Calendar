@@ -18,8 +18,8 @@ namespace WeatherApi.EventsDataBase.ModelsConvertion
         public static WeatherApi.Models.DayBook convertDayBook(Models.DayBook dataBaseDayBook) {
             WeatherApi.Models.DayBook dayBook = new WeatherApi.Models.DayBook() { date = dataBaseDayBook.Date };
             List<WeatherApi.Models.Event> events = new List<WeatherApi.Models.Event>();
-            foreach (var element in dataBaseDayBook.EventList) {
-                events.Add(new WeatherApi.Models.Event() {  location = element.Location, title = element.Title});
+            foreach (var dataBaseEvent in dataBaseDayBook.EventList) {
+                events.Add(new WeatherApi.Models.Event() {  location = dataBaseEvent.Location, title = dataBaseEvent.Title, startDate = dataBaseEvent.StartDate, description = dataBaseEvent.Description});
             }
             dayBook.eventList = events;
             return dayBook;
@@ -31,7 +31,7 @@ namespace WeatherApi.EventsDataBase.ModelsConvertion
         /// <param name="dataBaseEvent">Event from DataBase</param>
         /// <returns>Converted Event to class Model</returns>
         public static WeatherApi.Models.Event convertEvent(Models.Event dataBaseEvent) {
-            return new WeatherApi.Models.Event() { title = dataBaseEvent.Title, location = dataBaseEvent.Location };
+            return new WeatherApi.Models.Event() { title = dataBaseEvent.Title, location = dataBaseEvent.Location, startDate = dataBaseEvent.StartDate, description = dataBaseEvent.Description };
         }
     }
 }

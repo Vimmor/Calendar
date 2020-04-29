@@ -12,7 +12,9 @@ namespace WeatherApi.EventsDataBase.Models
     {
         public int Id { get; set; }
         public int DayBookId { get; set; }
-        public string Title { get; set; }
-        public string Location { get; set; }        
+        public String Title { get; set; }
+        public String Location { get; set; }
+        public DateTime StartDate { get; set; }
+        public String Description { get; set; }
     }
 }

@@ -19,10 +19,10 @@ namespace CalendarUI.DataConverter
         /// <returns>String ready to display</returns>
         public static String getDayBooks(Models.DayBook listOfDayBooks) {
             var allEventsTable = new StringBuilder();
-            allEventsTable.AppendLine($"--------- {listOfDayBooks.date.Day}.{listOfDayBooks.date.Month}.{listOfDayBooks.date.Year} -----------");
-            allEventsTable.AppendLine("Title\tLocation");
+            allEventsTable.AppendLine($"--------- {listOfDayBooks.date.ToShortDateString()} -----------");
+            allEventsTable.AppendLine("Title\tLocation\tStart Date\tDescription");
             foreach (var dayBook in listOfDayBooks.eventList) {
-                    allEventsTable.AppendLine($"{dayBook.title}\t{dayBook.location}");
+                    allEventsTable.AppendLine($"{dayBook.title}\t{dayBook.location}\t{dayBook.startDate.ToShortTimeString()}\t{dayBook.description}");
             }
             return allEventsTable.ToString();
         }
@@ -36,7 +36,7 @@ namespace CalendarUI.DataConverter
             var allEventsTable = new System.Text.StringBuilder();
             foreach (var dayBookEvent in listOfAllEvents)
             {
-                allEventsTable.AppendLine($"{dayBookEvent.title}\t{dayBookEvent.location}");
+                allEventsTable.AppendLine($"{dayBookEvent.title}\t{dayBookEvent.location}\t{dayBookEvent.startDate.ToShortDateString()} {dayBookEvent.startDate.ToShortTimeString()}\t{dayBookEvent.description}");
             }
             return allEventsTable.ToString();
         }

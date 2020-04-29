@@ -10,7 +10,9 @@ namespace WeatherApi.Models
     /// </summary>
     public class Event
     {
-        public string title { get; set; }
-        public string location { get; set; }
+        public String title { get; set; }
+        public String location { get; set; }
+        public DateTime startDate { get; set; }
+        public String description{ get; set; }
     }
 }

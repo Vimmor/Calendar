@@ -50,7 +50,7 @@ namespace WeatherApi.Controllers
             var eventsFromDb= context.Event.ToList();
             var listOfAllEvents = new List<Models.Event>();
             foreach (var newEvent in eventsFromDb) {
-                listOfAllEvents.Add(new Models.Event() { location = newEvent.Location, title = newEvent.Title });
+                listOfAllEvents.Add(new Models.Event() { location = newEvent.Location, title = newEvent.Title, startDate = newEvent.StartDate, description = newEvent.Description });
             }
             return JsonConvert.SerializeObject(listOfAllEvents);
         }

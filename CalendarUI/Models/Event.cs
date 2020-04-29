@@ -11,5 +11,8 @@ namespace CalendarUI.Models
     {
         public String location { get; set; }
         public String title { get; set; }
+        public DateTime startDate { get; set; }
+        public String description { get; set; }
+
     }
 }

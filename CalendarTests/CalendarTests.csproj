@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CalendarUI\CalendarUI.csproj" />
     <ProjectReference Include="..\WeatherApi\WeatherApi.csproj" />
   </ItemGroup>
 
