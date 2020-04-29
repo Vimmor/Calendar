@@ -7,7 +7,7 @@ The other small task was to make connection between calendar and external Weathe
 - Create events with parametres location, title, startdate and description
 - Push data to the local MSQQLServer database inbuilt in MS Visual Studio
 - Display events filtred by dates
-- 
+- Download weather forecast data from Api and display in appropriate format
 
 ## Endpoints
 - http://localhost:1998/Events/{eventDay} - returns list of the events from database filtered by specified date
