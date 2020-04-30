@@ -2,11 +2,12 @@
 Project for an university course about .Net Framework.
 The goal was to create a program to create own Calendar with data saved in database.
 The other small task was to make connection between calendar and external Weather Forecast Api.
+Application provide a User Interface, that was created with Windows Presentation Foundation.
 
 ## Funcionality 
 - Create events with parametres location, title, startdate and description
-- Push data to the local MSQQLServer database inbuilt in MS Visual Studio
-- Display events filtred by dates
+- Push data to the MSSQLServer LocalDB inbuild in Visual Studio
+- Display all events or filtred by dates
 - Download weather forecast data from Api and display in appropriate format
 
 ## Endpoints
