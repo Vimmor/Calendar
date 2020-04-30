@@ -21,7 +21,7 @@ namespace WeatherApi.EventsDataBase.ModelsConvertion
             stringBuilder.AppendLine($"Longitude: {String.Format("{0:N2}", forecast.city.coord.lon)} |  Latitude: {String.Format("{0:N2}", forecast.city.coord.lon)}");
             stringBuilder.AppendLine("------------ Main Information --------------");
             stringBuilder.AppendLine("------- Temperature -------");
-            stringBuilder.AppendLine($"Temperature: {String.Format("{0:N2}", forecast.list[0].main.Temp-273.15)}C");
+            stringBuilder.AppendLine($"Temperature: {String.Format("{0:N3}", forecast.list[0].main.Temp-273.15)}C");
             if (forecast.list[0].main.FeelsLike != 0) {
                 stringBuilder.AppendLine($"Perceived temperature: {String.Format("{0:N2}",forecast.list[0].main.FeelsLike-273.15)}C");
             }

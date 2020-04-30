@@ -61,10 +61,23 @@ namespace CalendarUI.Communication
         /// </summary>
         /// <param name="date">Specify location that we want to get weather forecast
         /// specified by cityname or zip and country code</param>
-        /// <returns>Ready String to display in TextBox</returns>
+        /// <returns>String ready to display in TextBox</returns>
         public static String getWeatherForecast(String city) {
             WebClient client = new WebClient();
             var response = client.DownloadString("http://localhost:1998/Weather/" + city);
+            return response;
+        }
+
+        /// <summary>
+        /// Method to get string contained information about 
+        /// current weather in location specified by variable
+        /// </summary>
+        /// <param name="id">Specify location that we want to get weather forecast
+        /// specified by City ID</param>
+        /// <returns>String ready to display in TextBox</returns>
+        public static String getWeatherByCityId(String id) {
+            WebClient client = new WebClient();
+            var response = client.DownloadString("http://localhost:1998/Weather/city/" + id);
             return response;
         }
     }

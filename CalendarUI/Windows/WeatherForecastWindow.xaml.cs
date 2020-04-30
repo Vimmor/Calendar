@@ -44,10 +44,25 @@ namespace CalendarUI.Windows
                         resultTextBox.Text = Communication.CommunicateWithApi.getWeatherForecast(dataTextBox.Text);
                     }
                 }
-                else
-                {
-                    resultTextBox.Text = Communication.CommunicateWithApi.getWeatherForecast(dataTextBox.Text);
+                if (choiceComboBox.SelectedItem == cityId) {
+                    try
+                    {
+                        var id = int.Parse(dataTextBox.Text);
+                        resultTextBox.Text = Communication.CommunicateWithApi.getWeatherByCityId(dataTextBox.Text);
+                    }
+                    catch (Exception except)
+                    {
+                        MessageBoxResult message = MessageBox.Show("You choose by City ID, then give a city id!", "Nothing has been chosen");
+                    }
                 }
+               if (choiceComboBox.SelectedItem == zipcode) {
+                   if (dataTextBox.Text.Contains("/")) {
+                        resultTextBox.Text = Communication.CommunicateWithApi.getWeatherForecast(dataTextBox.Text);
+                   }
+                   else {
+                        MessageBoxResult message = MessageBox.Show("You choose by Zip Code and country code, then give zip code and country code!", "Nothing has been chosen");
+                    }
+               }
             }
         }
     }

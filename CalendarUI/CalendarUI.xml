@@ -56,7 +56,16 @@
             </summary>
             <param name="date">Specify location that we want to get weather forecast
             specified by cityname or zip and country code</param>
-            <returns>Ready String to display in TextBox</returns>
+            <returns>String ready to display in TextBox</returns>
+        </member>
+        <member name="M:CalendarUI.Communication.CommunicateWithApi.getWeatherByCityId(System.String)">
+            <summary>
+            Method to get string contained information about 
+            current weather in location specified by variable
+            </summary>
+            <param name="id">Specify location that we want to get weather forecast
+            specified by City ID</param>
+            <returns>String ready to display in TextBox</returns>
         </member>
         <member name="T:CalendarUI.DataConverter.DayBookConverter">
             <summary>

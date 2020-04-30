@@ -56,7 +56,7 @@
             <param name="name">It specifies the City name</param>
             <returns>Information in suitable format</returns>
         </member>
-        <member name="M:WeatherApi.Controllers.ForecastController.GetWeatherByZipCode(System.String,System.String)">
+        <member name="M:WeatherApi.Controllers.ForecastController.GetWeatherByZipCode(System.Int32,System.String)">
             <summary>
             Get endpoints to get an information from Api
             for the City specified by Zip and Country Code
@@ -64,6 +64,14 @@
             <param name="zip_code">Zip Code specified in Api Documentation</param>
             <param name="country_code">Same as upper</param>
             <returns>Information in suitable format</returns>
+        </member>
+        <member name="M:WeatherApi.Controllers.ForecastController.GetWeatherByCityId(System.String)">
+            <summary>
+            Get endpoints to get an information from Api
+            for the City specified by City ID 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:WeatherApi.EventData.EventContext">
             <summary>

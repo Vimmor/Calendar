@@ -54,8 +54,20 @@ namespace WeatherApi.Controllers
         /// <param name="country_code">Same as upper</param>
         /// <returns>Information in suitable format</returns>
         [HttpGet("{zip_code}/{country_code}")]
-        public String GetWeatherByZipCode(string zip_code, string country_code) {
-            var response = JsonConvert.DeserializeObject<Forecast>(Unirest.get(basicUrl + "?zip" + zip_code + "," + country_code + "&APPID=" + accessCode).asJson<string>().Body.ToString());
+        public String GetWeatherByZipCode(int zip_code, String country_code) {
+            var response = JsonConvert.DeserializeObject<Forecast>(Unirest.get(basicUrl + "?zip=" + zip_code + "," + country_code + "&APPID=" + accessCode).asJson<string>().Body.ToString());
+            return EventsDataBase.ModelsConvertion.ConvertIntoUserForecast.convertFromJsonToString(response);
+        }
+
+        /// <summary>
+        /// Get endpoints to get an information from Api
+        /// for the City specified by City ID 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("city/{id}")]
+        public String GetWeatherByCityId(String id) {
+            var response = JsonConvert.DeserializeObject<Forecast>(Unirest.get(basicUrl + "?id=" + id + "&APPID=" + accessCode).asJson<string>().Body.ToString());
             return EventsDataBase.ModelsConvertion.ConvertIntoUserForecast.convertFromJsonToString(response);
         }
     }

@@ -50,6 +50,7 @@
         <ComboBox Margin="368,97,333,293" Name="choiceComboBox">
             <ComboBoxItem Content="City Name" Name="city"></ComboBoxItem>
             <ComboBoxItem Content="Zip Code" Name="zipcode"></ComboBoxItem>
+            <ComboBoxItem Content="City ID" Name="cityId"></ComboBoxItem>
         </ComboBox>
         <Button x:Name="returnButton" Content="" Margin="0,-3,744,386" IsDefault="True" VerticalContentAlignment="Bottom" Click="returnButton_Click">
             <Button.Background>
