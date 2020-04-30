@@ -27,7 +27,7 @@
         </Button>
         <TextBox x:Name="titleTextBox" Text="Title" TextWrapping="Wrap" Margin="95,90,427,285" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" RenderTransformOrigin="1.141,1.959"/>
         <TextBox x:Name="locationTextBox" Text="Location" TextWrapping="Wrap" Margin="96,148,426,222" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="timeTextBox" Text="Time in format:             MM/dd/yyyy          HH:MM" TextWrapping="Wrap" Margin="98,260,424,52" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5">
+        <TextBox x:Name="timeTextBox" Text="Time in format:             MM.DD.YYYY          HH:MM" TextWrapping="Wrap" Margin="98,260,424,52" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

@@ -26,8 +26,8 @@ namespace CalendarUI.Windows
                 try
                 {
                     var date = DateTime.Parse(timeTextBox.Text);
-                    var newEvent = new Models.Event() { location = locationTextBox.Text, title = titleTextBox.Text, startDate = DateTime.Parse(timeTextBox.Text), description = descriptionTextBox.Text };
-                    Communication.CommunicateWithApi.addNewRecord(newEvent, timeTextBox.Text);
+                    var newEvent = new Models.Event() { location = locationTextBox.Text, title = titleTextBox.Text, startDate = date, description = descriptionTextBox.Text };
+                    Communication.CommunicateWithApi.addNewRecord(newEvent, date.ToShortDateString());
                 }
                 catch (FormatException exept)
                 {
