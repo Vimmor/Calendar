@@ -5,7 +5,7 @@ The other small task was to make connection between calendar and external Weathe
 
 ## Funcionality 
 - Create events with parametres location, title, startdate and description
-- Push data to the local MSQQLServer database inbuilt in MS Visual Studio
+- Push data to the MSSQLServer LocalDB inbuild in Visual Studio
 - Display events filtred by dates
 - Download weather forecast data from Api and display in appropriate format
 
