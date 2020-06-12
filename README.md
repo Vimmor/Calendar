@@ -6,7 +6,7 @@ Application provides a User Interface, that was created with Windows Presentatio
 
 ## Funcionality 
 - Create events with parametres location, title, startdate and description
-- Push data to the MSSQLServer LocalDB inbuild in Visual Studio
+- Push data to the MS SQLServer LocalDB inbuild in Visual Studio
 - Display all events or filtred by dates
 - Download weather forecast data from Api and display in appropriate format
 
